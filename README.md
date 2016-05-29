@@ -2,7 +2,7 @@
 
 The beginnings of a bundle of applications used to power a WiFi-equipped hygrometer (temperature & humidity sensor) for a cigar humidor.
 
-Nothing here yet, but watch this space.
+All data is being faked so far (still waiting for the DHT22 to show up in the mail) but you can see how it works at <a href="http://humidor.sparklegravy.com">humidor.sparklegravy.com</a>.
 
 Eventual goals:
 * Microcomputer-controlled temperature sensor

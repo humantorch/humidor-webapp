@@ -1,7 +1,7 @@
 $icon-font-path: '../fonts/';
 
 // bower:scss
-// @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+//@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 
 .browserupgrade {
@@ -13,8 +13,8 @@ $icon-font-path: '../fonts/';
 
 /* Space out content a bit */
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -55,7 +55,7 @@ body {
   border-bottom: 1px solid #e5e5e5;
   .btn {
     font-size: 21px;
-    padding: 14px 24px;
+    padding: 4px 24px;
   }
 }
 
@@ -70,7 +70,7 @@ body {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
+    // max-width: 730px;
   }
 
   /* Remove the padding we set earlier */
@@ -90,4 +90,32 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+
+/* user styles */
+
+body {
+  text-align: center;
+  font-family: Inconsolata; 
+  background-color: #fdf6e3;
+  color: #657b83;
+}
+
+h1 {
+  margin: 3px;
+}
+
+h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    color: #268BC7;
+    font-family: 'Inconsolata';
+}
+
+.knob {
+  display: none;
+}
+
+a {
+  color: #cb4b16;
+  font-weight: bold;
 }
