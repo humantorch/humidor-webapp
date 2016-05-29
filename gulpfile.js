@@ -8,6 +8,8 @@ const wiredep = require('wiredep').stream;
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
+var shell = require('gulp-shell')
+
 gulp.task('styles', () => {
   return gulp.src('app/styles/*.scss')
     .pipe($.plumber())
@@ -172,3 +174,8 @@ gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
 gulp.task('default', ['clean'], () => {
   gulp.start('build');
 });
+
+gulp.task('deploy', shell.task([
+  // if you want to deploy via rsync then update the data below to your own server info
+  'rsync -avh dist/ you@yourserver.com:/path/to/your/webapp'
+]));

@@ -1,6 +1,16 @@
+
+
 function things(data) {
-	var len = data.length-1;
-	console.log(data[len]);
+	var len = data.length-1,
+		d = data[len],
+		$humi = $('#humi'),
+		$temp = $('#temp'),
+		$curdate = $('#curdate');
+	
+	console.log(d);
+	$humi.text(d.humidity);
+	$temp.text(d.temperature);
+	$curdate.text(d.curdate);
 };
 
 $(function() {
