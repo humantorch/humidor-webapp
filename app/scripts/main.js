@@ -34,8 +34,7 @@ function things(data) {
 	$({value: 0}).animate({value: d.humidity}, {
 	    duration: 1500,
 	    easing:'easeOutQuad',
-	    step: function() 
-	    {
+	    step: function() {
 	        $('.knob.humi').val(Math.ceil(this.value)).trigger('change').val($('.humi').val()+'%');
 	    }
 	});
@@ -43,8 +42,7 @@ function things(data) {
 	$({value: 0}).animate({value: d.temperature}, {
 	    duration: 1500,
 	    easing:'easeOutQuad',
-	    step: function() 
-	    {
+	    step: function() {
 	        $('.knob.temp').val(Math.ceil(this.value)).trigger('change').val($('.temp').val()+'ºF');
 	    }
 	});
