@@ -1,3 +1,5 @@
+jQuery.fx.interval = 1;
+
 $.ajax({
 	dataType:'json',
 	url:'http://humidor.sparklegravy.com/jsonp.php',
@@ -10,9 +12,13 @@ $.ajax({
 function things(data) {
 	console.log(data);
 	var len = data.length-1,
-	d = data[len],
-	$curdate = $('#curdate'),
-	warning = '#cb4b16';
+		d = data[len],
+		$curdate = $('#curdate'),
+		warning = '#cb4b16',
+		easetype = 'easeOutCubic',
+		easespeed = 1500;
+
+
 	$curdate.text(d.curdate);
 
 	if (d.temperature < 65  || d.temperature > 72) {
@@ -32,18 +38,18 @@ function things(data) {
 	}
 
 	$({value: 0}).animate({value: d.humidity}, {
-	    duration: 1500,
-	    easing:'easeOutQuad',
+	    duration: easespeed,
+	    easing: easetype,
 	    step: function() {
-	        $('.knob.humi').val(Math.ceil(this.value)).trigger('change').val($('.humi').val()+'%');
+	        $('.knob.humi').val(this.value).trigger('change').val(parseFloat($('.humi').val()).toFixed(1)+'%');
 	    }
 	});
 
 	$({value: 0}).animate({value: d.temperature}, {
-	    duration: 1500,
-	    easing:'easeOutQuad',
+	    duration: easespeed -250,
+	    easing: easetype,
 	    step: function() {
-	        $('.knob.temp').val(Math.ceil(this.value)).trigger('change').val($('.temp').val()+'ºF');
+	        $('.knob.temp').val(this.value).trigger('change').val(parseFloat($('.temp').val()).toFixed(1)+'º');
 	    }
 	});
 	
