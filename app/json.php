@@ -26,5 +26,12 @@
     while($r = mysqli_fetch_assoc($result)) {
         $rows[] = $r;
     }
-    echo "things(".json_encode($rows).")";
+
+    // if ?cb=whatever is appended to URL return as jsonp with cb parameter as function name, otherwise straight json
+    if ($_GET["cb"]) {
+        echo $_GET["cb"]."(".json_encode($rows).")";
+    } else {
+        echo json_encode($rows);
+    }
+
 ?>
