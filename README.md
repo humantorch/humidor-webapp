@@ -15,6 +15,7 @@ Eventual goals:
 * Updates posted to a Twitter account
 * Pebble app so current data can be read from a smartwatch
 
+
 Tools being used:
 * Raspberry Pi Zero
 * DHT22 environment sensor
