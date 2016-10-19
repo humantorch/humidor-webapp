@@ -44,7 +44,7 @@ $(function() {
 		    duration: easespeed -250,
 		    easing: easetype,
 		    step: function() {
-		        $('.knob.temp').val(this.value).trigger('change').val(parseFloat($('.temp').val()).toFixed(1)+'º');
+		        $('.knob.temp').val(this.value).trigger('change').val(parseFloat($('.temp').val()).toFixed(1)+'&deg;');
 		    }
 		});
 	}
